@@ -1,0 +1,9 @@
+li:nth-last-child(n+2) {
+	display:none !important;
+}
+li.online{
+	background-color:green;
+}
+li.offline{
+	background-color:grey;
+}

@@ -13,9 +13,11 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
+	<script src="scripts/jquery.timeago.js"></script>
   <script src="scripts/idle.js"></script>
   <script src="scripts/app2.js"></script>
   <link rel="stylesheet" type="text/css" href="styles/cover.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body ng-app="presence" ng-controller="LobbyCtrl">
  <div class="site-wrapper">
@@ -41,12 +43,13 @@
           <div class="inner cover">
 
             <div class="row">
+		
               <div ng-repeat="(key,val) in data" class="alert alert-info" > 
                 <b>User: </b> {{ key }} <b> </b> 
-                <ul>
-                  <span ng-repeat="(key,val) in val">
-                  <li>Out: {{val.ended | date:'yyyy-MM-dd HH:mm'}} -- In: {{val.began | date:'yyyy-MM-dd HH:mm'}}</li>
-                  </span>
+		
+                <ul class="list-group">
+                  <li ng-repeat="(key,val) in val" class="list-group-item {{val.ended | statusClass}}">Out: {{val.ended | timeAgo}} - In: {{val.began | date:'dd HH:mm'}}</li>
+		
                 </ul>
               </div>
             </div>

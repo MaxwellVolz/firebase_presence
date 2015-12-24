@@ -23,8 +23,22 @@ app.controller('LobbyCtrl',
 
     var obj = $firebase(ref).$asObject();
 
-
     obj.$bindTo($scope, "data");
     console.log(obj);
 
-  });
+});
+
+
+app.filter('timeAgo', function() {
+    return function(input) {
+        if (input == null) return "";
+        return jQuery.timeago(input);
+    };
+});
+
+app.filter('statusClass', function(){
+	return function(input){
+		if(input==null) return "online";
+		return "offline";
+	};
+});
