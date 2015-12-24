@@ -49,7 +49,6 @@
 		
                 <ul class="list-group">
                   <li ng-repeat="(key,val) in val" class="list-group-item {{val.ended | statusClass}}">Out: {{val.ended | timeAgo}} - In: {{val.began | date:'dd HH:mm'}}</li>
-		
                 </ul>
               </div>
             </div>
@@ -61,6 +60,12 @@
 <div class="mastfoot">
   <div class="inner">
     <!-- <p>Footer</p> -->
+    <div class="btn-toolbar" role="toolbar" aria-label="...">
+      <div class="btn-group" role="group" aria-label="..." ng-click="create()">Create</div>
+      <div class="btn-group" role="group" aria-label="..." ng-click="reset()">Reset</div>
+      <div class="btn-group" role="group" aria-label="..." ng-click="delete()">Delete</div>
+    </div>
+
   </div>
 </div>
 
