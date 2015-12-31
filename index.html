@@ -20,42 +20,22 @@
   <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body ng-app="presence" ng-controller="LobbyCtrl">
+
+<div class="player" ></div>
+<div ng-repeat="(key,val) in data" class="{{ key }} player2" ng-style="{'margin-left': ' '+ val.x + ' ', 'margin-top': ' '+ val.y + ' '}">{{key}}</div>
+  <!-- <div ng-repeat="(key,val) in val" ng-style="{'margin-left': {{val.x}} }"></div></div> -->
+<!-- <input type="button" value="set background" ng-click="myStyle={'background-color':'blue'}"> -->
+<div class="enemy" ng-style="enemyStyle"></div>
+
  <div class="site-wrapper">
 
-  <div class="site-wrapper-inner">
-
-    <div class="cover-container">
-
-      <div class="masthead clearfix">
-        <div class="inner">
-          <h3 class="masthead-brand">Presence Test</h3>
-          <nav>
-            <ul class="nav masthead-nav">
-<!--                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Features</a></li>
-                  <li><a href="#">Contact</a></li> -->
-                </ul>
-              </nav>
-            </div>
-          </div>
-
-
-          <div class="inner cover">
-
-            <div class="row">
-		
-              <div ng-repeat="(key,val) in data" class="alert alert-info" > 
-                <b>User: </b> {{ key }} <b> </b> 
-		
+              <!-- <div ng-repeat="(key,val) in data" class="alert alert-info" >  -->
+                <!-- <b>{{ key }}</b>  -->
+		<!-- 
                 <ul class="list-group">
-                  <li ng-repeat="(key,val) in val" class="list-group-item {{val.ended | statusClass}}">Out: {{val.ended | timeAgo}} - In: {{val.began | date:'dd HH:mm'}}</li>
-                </ul>
-              </div>
-            </div>
-<!--             <div id="presenceDiv" class="l-demo-container example-base">
-</div> -->
+                  <li ng-repeat="(key,val) in val" class="list-group-item {{val.ended | statusClass}}">In: {{val.began | timeAgo}} <br/> Out: {{val.ended | timeAgo}} 
 
-</div>
+ -->
 
 <div class="mastfoot">
   <div class="inner">
@@ -66,13 +46,11 @@
       <div class="btn-group" role="group" aria-label="..." ng-click="delete()">Delete</div>
     </div>
 
-  </div>
 </div>
 
 </div>
 
 </div>
-
 </div>
 
 

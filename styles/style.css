@@ -7,3 +7,61 @@ li.online{
 li.offline{
 	background-color:grey;
 }
+li{
+	color:white;
+}
+
+
+/*game style*/
+html,body{
+	width:800px;
+	height:800px;
+	margin:0px;
+	overflow:hidden;}
+
+div.enemy{
+	position:absolute !important;
+	margin-left:100px ;
+	margin-top:100px ;
+	width:100px ;
+	height:100px ;
+	background-color:#ccc ;
+
+	/*opacity:0;*/
+
+	-webkit-transition: all .8s ease-in-out;
+	-moz-transition: all .8s ease-in-out;
+	-o-transition: all .8s ease-in-out;
+	transition: all .8s ease-in-out;
+}
+
+div.player{
+	position:absolute !important;
+	margin-left:100px ;
+	margin-top:100px ;
+	width:100px ;
+	height:100px ;
+	background-color:#ccc ;
+
+	opacity:0;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
+div.player2{
+	position:absolute !important;
+	margin-left:100px ;
+	margin-top:100px ;
+	width:100px ;
+	height:100px ;
+	background-color:#ccc ;
+
+	-webkit-transition: all .3s ease-in-out;
+	-moz-transition: all .3s ease-in-out;
+	-o-transition: all .3s ease-in-out;
+	transition: all .3s ease-in-out;
+}
+
