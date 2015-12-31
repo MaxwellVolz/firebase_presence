@@ -207,36 +207,44 @@ var game = function(obj){
         if(dead == false){
 
             // LEFT
-            if (left){
+            if (left && leftMargin != 0){
                 leftMargin = 0;
+                change = true;
             }
 
             // RIGHT
-            if (right){
+            if (right && leftMargin != leftMarginLimit){
                 leftMargin = leftMarginLimit;
+                change = true;
             }
 
             // UP
-            if (up){
+            if (up && topMargin != 0){
                 topMargin = 0;
+                change = true;
             }
 
             // DOWN
-            if (down){
+            if (down && topMargin != topMarginLimit){
                 topMargin = topMarginLimit;
+                change = true;
             }
 
-            userRef.child('x').set(leftMargin);
-            userRef.child('y').set(topMargin);
-
+            if(change == true){
+                userRef.child('x').set(leftMargin);
+                userRef.child('y').set(topMargin);
+            }
+            
             left = false;
             right = false;
             up = false;
             down = false;
         }
         else{
-            userRef.child('x').set(350);
-            userRef.child('y').set(350);
+            if(leftMargin != 350 && topMargin != 350){
+                userRef.child('x').set(350);
+                userRef.child('y').set(350);
+            }
         }
 
         
